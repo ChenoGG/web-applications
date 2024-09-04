@@ -9,11 +9,75 @@
   </head>
 
   <body>
+    <header>
+      <img id="main-header-image" src="./assets/blue.png" alt="pixelated-ish shades of blue in a cloud like pattern">
+      <div id="main-header-text">
+        <h1>Farming Arc</h1>
+        <p>
+          Did you know that farming transcends the mere thought of survival?
+          It is a metaphor for life, growth, and the pursuit of peace For the Glory of Mankind. 
+          To return to simplicity, to the being itself. 
+          It is not only cultivating the land, but the soul.
+          Each seed planted with the hopes of freeing the world from the scars of war.
+          Each harvest a testament to the unending resilience and hope.  
+        </p>
+        <p>
+          A true warrior is not found in the sword, but the iridium hoe.
+        </p>
+      </div>
+    </header>
+
     <main>
+    <!-- Not sure how to keep this to one reusable class, too little time -->
+      <button id="create-button" type="button">New project</button>
+
+      <!-- action="/json" method="post" -->
+      <div id="project-form">
+      <form>
+        <label for="name">Project name:</label>
+        <input type="text" id="name" name="name">
+        
+        <p>Language:</p>
+        <div class="lang-div">
+          <input type="checkbox" id="langHTML" name="langHTML" value="HTML">
+          <label for="langHTML">HTML</label>
+          <input type="checkbox" id="langCSS" name="langCSS" value="CSS">
+          <label for="langCSS">CSS</label>
+          <input type="checkbox" id="langJS" name="langJS" value="JavaScript">
+          <label for="langJS">JavaScript</label>
+          <input type="checkbox" id="langPY" name="langPY" value="Python">
+          <label for="langPY">Python</label>
+        </div>
+
+        <label for="desc">Description:</label>
+        <textarea id="desc" name="desc"></textarea>
+
+        <label for="thumbnail">Project Thumbnail:</label>
+        <input type="file" id="thumbnail" name="thumbnail">
+
+        <input type="submit" value="Add project">
+        <button id="exit-button" type="button">Exit form</button>
+      </form>
+      </div>
+
+    <!-- test for now to see how it looks appears-->
+    <section id="project-card">
+      <img id="project-card-image" src="assets/farmland.jpg" alt="a farm with lots of wheat">
+      <h2>Testing 123</h2>
+      <p>HTML, CSS, JavaScript</p>
+      <p>This is the description of the project</p>
+    </section>
+
+    <section id="project-card">
+      <img id="project-card-image" src="assets/farmland.jpg" alt="a farm with lots of wheat">
+      <h2>HelloThereTwo</h2>
+      <p>JavaScript</p>
+      <p>Dear Anemone, please save me from this. How does this text look when it becomes very very very very very very long I wonder hmmm.</p>
+    </section>
 
     </main>
 
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 
 </html>
