@@ -3,28 +3,28 @@
         "name": "Testing 123",
         "language": ["HTML", "CSS", "JavaScript"],
         "description": "This is the description of the project",
-        "thumbnail": "./farmland.jpg",
+        "thumbnail": "./assets/farmland.jpg",
         "thumbnailAlternative": "Alt text to the image should it be missing from the database"
     },
     {
         "name": "123 Testing",
         "language": ["Python", "C#"],
         "description": "This is another description",
-        "thumbnail": "./farmland.jpg",
+        "thumbnail": "./assets/farmland.jpg",
         "thumbnailAlternative": "Yes this is not appropriate alt text"
     },
     {
         "name": "Hello",
         "language": ["JavaScript"],
         "description": "Dear",
-        "thumbnail": "./farmland.jpg",
-        "thumbnailAlternative": "Anemone"
+        "thumbnail": "./assets/farmland.jpg",
+        "thumbnailAlternative": "You see I planned to have different pictures"
     },
     {
         "name": "HelloThereTwo",
         "language": ["JavaScript"],
         "description": "Dear",
-        "thumbnail": "./farmland.jpg",
-        "thumbnailAlternative": "Anemone"
+        "thumbnail": "./assets/farmland.jpg",
+        "thumbnailAlternative": "But dummy data is lazy data"
     }
 ]
