@@ -2,6 +2,7 @@ body {
   text-align: center;
   max-width: 1000px;
   margin: 40px auto;
+  background-color: #ffaee0;
 }
 
 /* HEADER STUFF */
@@ -14,6 +15,7 @@ header {
 #main-header-image {
   width: 450px;
   height: auto;
+  border-radius: 50px;
 }
 
 #main-header-text {
@@ -28,18 +30,17 @@ header {
   justify-content: left;
 }
 
+/* PROJECT CARDS */
 .project-card {
   
 }
 
-#project-card-image {
+.project-card img {
   width: 300px;
   height: auto;
+  border-radius: 5px;
 }
-
-.project-card-text {
-
-}
+/* PROJECT CARDS */
 
 /* PROJECT FORM */
 #project-form {

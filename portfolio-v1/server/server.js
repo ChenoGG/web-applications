@@ -17,7 +17,7 @@ app.get("/json", async (c) => {
     return c.json(JSON.parse(data))
 })
 
-// Server should work
+// test
 app.get("/", async (c) => {
     return c.text("Hellooooo am I breaking the 404?");
 });
