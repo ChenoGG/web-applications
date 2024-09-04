@@ -1,30 +1,30 @@
 [
     {
-        "name": "",
-        "language": [""],
-        "description": "",
-        "thumbnail": "",
-        "thumbnailAlternative": ""
+        "name": "Testing 123",
+        "language": ["HTML", "CSS", "JavaScript"],
+        "description": "This is the description of the project",
+        "thumbnail": "./farmland.jpg",
+        "thumbnailAlternative": "Alt text to the image should it be missing from the database"
     },
     {
-        "name": "",
-        "language": [""],
-        "description": "",
-        "thumbnail": "",
-        "thumbnailAlternative": ""
+        "name": "123 Testing",
+        "language": ["Python", "C#"],
+        "description": "This is another description",
+        "thumbnail": "./farmland.jpg",
+        "thumbnailAlternative": "Yes this is not appropriate alt text"
     },
     {
-        "name": "",
-        "language": [""],
-        "description": "",
-        "thumbnail": "",
-        "thumbnailAlternative": ""
+        "name": "Hello",
+        "language": ["JavaScript"],
+        "description": "Dear",
+        "thumbnail": "./farmland.jpg",
+        "thumbnailAlternative": "Anemone"
     },
     {
-        "name": "",
-        "language": [""],
-        "description": "",
-        "thumbnail": "",
-        "thumbnailAlternative": ""
+        "name": "HelloThereTwo",
+        "language": ["JavaScript"],
+        "description": "Dear",
+        "thumbnail": "./farmland.jpg",
+        "thumbnailAlternative": "Anemone"
     }
 ]
