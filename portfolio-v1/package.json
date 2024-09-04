@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:frontend": "vite",
-    "dev:server": "node --watch server.js",
+    "dev:server": "node --watch server/server.js",
     "build": "vite build",
     "preview": "vite preview",
     "dev": "concurrently -n frontend,server -c green,blue \"pnpm run dev:frontend\" \"pnpm run dev:server\""
