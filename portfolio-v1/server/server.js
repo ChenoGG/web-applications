@@ -22,7 +22,7 @@ app.get("/", async (c) => {
     return c.text("Hellooooo am I breaking the 404?");
 });
 
-console.log("HOPE IT WORKS LUL")
+console.log("HOPE IT WORKS")
 
 const port = 3999
 serve({
