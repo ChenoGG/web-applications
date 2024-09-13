@@ -9,63 +9,64 @@
 </head>
 
 <body>
-    <!--Best way to do the header?-->
     <nav>
         <ul>
-            <li>HIOF</li>
-            <li>User</li>
+            <li><a href="#">HIOF</a></li>
+            <li><a href="#">User</a></li>
         </ul>
     </nav>
 
     <main>
-        <form>
+        <div class="form-container">
+        <form class="form-item">
             <label for="title">Title</label>
             <input type="text" id="title" name="title">
             
             <label for="todoist">Content</label>
             <textarea id="todoist" name="todoist" rows="6" cols="70"></textarea>
 
-            <input type="submit" method="POST">
+            <input class="card-and-form-button big-button" type="submit" value="Add">
         </form>
+    </div>
 
         <section>
             <h2>My Todos</h2>
-            
+
             <div class="grid-container">
                 <article class="grid-item">
                     <h3>Todotitle</h3>
                     <p>I'm baby sriracha hot chicken mixtape pabst organic air ...</p>
-                    <button type="button">Complete</button> <!-- Submit type instead? -->
+                    <button class="card-and-form-button" type="button">Complete</button> 
                 </article>
 
                 <article class="grid-item">
                     <h3>Todotitle</h3>
                     <p>I'm baby sriracha hot chicken mixtape pabst organic air ...</p>
-                    <button type="button">Complete</button> <!-- Submit type instead? -->
+                    <button class="card-and-form-button" type="button">Complete</button> 
                 </article>
 
                 <article class="grid-item">
                     <h3>Todotitle</h3>
                     <p>I'm baby sriracha hot chicken mixtape pabst organic air ...</p>
-                    <button type="button">Complete</button> <!-- Submit type instead? -->
+                    <button class="card-and-form-button" type="button">Complete</button> 
                 </article>
 
                 <article class="grid-item">
                     <h3>Todotitle</h3>
                     <p>I'm baby sriracha hot chicken mixtape pabst organic air ...</p>
-                    <button type="button">Complete</button> <!-- Submit type instead? -->
+                    <button class="card-and-form-button" type="button">Complete</button> 
                 </article>
 
                 <article class="grid-item">
                     <h3>Todotitle</h3>
                     <p>I'm baby sriracha hot chicken mixtape pabst organic air ...</p>
-                    <button type="button">Complete</button> <!-- Submit type instead? -->
+                    <button class="card-and-form-button" type="button">Complete</button> 
                 </article>
 
                 <article class="grid-item">
                     <h3>Todotitle</h3>
                     <p>I'm baby sriracha hot chicken mixtape pabst organic air ...</p>
-                    <button type="button">Complete</button> <!-- Submit type instead? -->
+                    <button class="card-and-form-button" type="button">Complete</button> 
                 </article>
             </div>
         </section>
