@@ -1,9 +1,31 @@
 import { useState } from "react";
 
 type AddStudentFormProps = {
-    onAddStudent: string
-}
+    onAddStudent: ({name}: {name: string}) => void;
+};
 
-export default function AddStudentForm() {
+export default function AddStudentForm(props: AddStudentFormProps) {
+    const { onAddStudent } = props;
+    const [name, setName] = useState("");
 
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!name) return;
+        onAddStudent({name});
+        setName("");
+    };
+
+    return (
+        <form onSubmit={handleSubmit} className="add-student-form">
+            <label htmlFor="name">Name: </label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Students name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
+            <button type="submit">Add Student</button>
+        </form>
+    );
 }
