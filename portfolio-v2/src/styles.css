@@ -38,13 +38,14 @@
   .project-card {
     float: left;
     width:  50%;
+    height: auto;
   }
   
   .project-card img {
     width: 300px;
     height: auto;
     border-radius: 5px;
-  }
+  } 
   /* PROJECT CARDS */
   
   /* PROJECT FORM */
