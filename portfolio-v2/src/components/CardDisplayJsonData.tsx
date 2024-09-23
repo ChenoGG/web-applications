@@ -1,7 +1,7 @@
 import Card from "./Card";
 import jsonData from '../assets/data.json';
 
-export default function CardListAll() {
+export default function CardDisplayJsonData() {
     return (
         <div>
         {jsonData.map((data) => (
