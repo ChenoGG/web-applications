@@ -3,15 +3,13 @@ import Card from './components/Card';
 import HeaderPage from './components/HeaderPage';
 import AddProjectForm from './components/AddProjectForm';
 import OpenFormButton from './components/OpenFormButton';
-import CardListAll from './components/CardListAll';
+import CardDisplayJsonData from './components/CardDisplayJsonData';
 
 function App() {
 
   return (
      <>
         {/* Static images goes into public folder? */}
-        {/* Look for other ways instead of mapping it later?
-        I Just wanted two paragraphs without using props for each man. */}
         <HeaderPage
           headerImage={{image: "assets/blue.png", 
             imageAltText: "pixelated-ish shades of blue in a cloud like pattern"}}
@@ -21,7 +19,7 @@ function App() {
       <main>
         <OpenFormButton />
         <AddProjectForm />
-        <CardListAll />
+        <CardDisplayJsonData />
 
         {/* <Card 
           thumbnail={{image:"assets/farmland.jpg", imageAltText:"This is alt text"}}
