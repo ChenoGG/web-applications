@@ -1,9 +1,9 @@
 type ParagraphProps = {
-    paragraph: string
+    children: React.ReactNode
 }
 
 export default function Paragraph(props: ParagraphProps) {
-    const { paragraph } = props
+    const { children } = props
     
-    return <p>{paragraph}</p>
+    return <p>{children}</p>
 }
