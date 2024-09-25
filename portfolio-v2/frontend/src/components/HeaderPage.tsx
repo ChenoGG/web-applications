@@ -19,7 +19,7 @@ export default function HeaderPage(props: HeaderPageProps) {
     const { headerImage, title } = props
     
     return (
-        <header >
+        <>
             <img id="main-header-image" src={headerImage.image} alt={headerImage.imageAltText} />
             <div id="main-header-text">
                 <h1>{title}</h1>
@@ -33,6 +33,6 @@ export default function HeaderPage(props: HeaderPageProps) {
                     {headerParagraphText2}
                 </Paragraph>
             </div>
-        </header>
+        </>
     )
 }
