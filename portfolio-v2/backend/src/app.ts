@@ -9,9 +9,9 @@ app.use("/*", cors())
 
 app.use("/statics/*", serveStatic({ root: "./" }))
 
-// /json is the web-route
-app.get("/json", async (c) => {
-    const data = await readFile("assets/data.json", "utf-8")
+// json is the web-route
+app.get("/projects", async (c) => {
+    const data = await readFile("../frontend/src/assets/data.json", "utf-8")
 
     return c.json(JSON.parse(data))
 })
