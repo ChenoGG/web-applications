@@ -1,13 +1,6 @@
-import { ImageProps } from "./types"
+import { ProjectProps } from "./types"
 
-type CardProps = {
-    thumbnail: ImageProps
-    name: string
-    language: string[]
-    description: string
-}
-
-export default function Card(props: CardProps) {
+export default function Card(props: ProjectProps) {
     const { thumbnail, name, language, description } = props
 
     return (
