@@ -2,6 +2,7 @@ import { ofetch } from "ofetch";
 import { useEffect } from "react";
 import { ProjectProps } from "./types";
 import Card from "./Card";
+import { FormProps } from "./types";
 
 // Courtesy of ChatGPT for moving projects/setProject up a layer and getting it to work - 
 // gets very confusing the more there is
@@ -9,6 +10,7 @@ type DisplayProjectProps = {
   projects: ProjectProps[]
   setProjects: (projects: ProjectProps[]) => void
   total: number
+  addProject: (newProject: FormProps) => void
   removeProject: (name: string) => void
 }
 
@@ -28,6 +30,7 @@ export default function DisplayProject(props: DisplayProjectProps) {
         });
     };
     
+    // look at Clean up etc. later - https://ulearn.no/courses/webapp-2024-react-server/09-useffect-del-2
     useEffect(() => {
       initializeData();
     }, []);
