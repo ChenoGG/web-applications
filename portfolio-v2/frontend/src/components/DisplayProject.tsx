@@ -32,8 +32,8 @@ export default function DisplayProject(props: DisplayProjectProps) {
       initializeData();
     }, []);
 
-    // for 1.6 (and 1.3?) incase no project in list
-    if (total === 0) return null
+    // for 1.6 (and 1.3? although this just hides it then..) incase no project in list
+    if (total === 0) return null 
 
     return (
         <>
@@ -50,8 +50,9 @@ export default function DisplayProject(props: DisplayProjectProps) {
           ))}
         </div>
 
+        {/* https://upmostly.com/tutorials/react-filter-filtering-arrays-in-react-with-examples */}
         {/* Using filter to get X amount of times a language is used in projects */}
-        <h3>Total project: {total}</h3>
+        <h3>Total projects: {total}</h3>
         <p>HTML - {projects.filter(project => project.language.includes("HTML")).length}</p>
         <p>CSS - {projects.filter(project => project.language.includes("CSS")).length}</p>
         <p>JavaScript - {projects.filter(project => project.language.includes("JavaScript")).length}</p>
