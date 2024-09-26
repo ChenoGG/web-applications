@@ -9,3 +9,10 @@ export type ProjectProps = {
     description: string
     thumbnail: ImageProps
 }
+
+export type FormProps = {
+    name: string
+    language: string[]
+    desc: string
+    thumbnail: string
+  }
