@@ -1,10 +1,19 @@
 import { ofetch } from "ofetch";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ProjectProps } from "./types";
 import Card from "./Card";
 
-export default function DisplayProject() {
-    const [projects, setProjects] = useState<ProjectProps[]>([])
+// Courtesy of ChatGPT for moving projects/setProject up a layer and getting it to work - 
+// gets very confusing the more there is
+type DisplayProjectProps = {
+  projects: ProjectProps[]
+  setProjects: (projects: ProjectProps[]) => void
+  total: number
+  removeProject: (name: string) => void
+}
+
+export default function DisplayProject(props: DisplayProjectProps) {
+    const { projects, setProjects, total, removeProject } = props
 
     const initializeData = () => {
       console.log("fetching data");
@@ -23,18 +32,31 @@ export default function DisplayProject() {
       initializeData();
     }, []);
 
+    // for 1.6 (and 1.3?) incase no project in list
+    if (total === 0) return null
 
     return (
-        <div>
-        {projects.map((data) => (
-            <Card
-                key={data.name} 
-                thumbnail={data.thumbnail} 
-                name={data.name}
-                language={data.language}
-                description={data.description}
-            />
-        ))}
+        <>
+        <div className="project-card-container">
+          {projects.map((data) => (
+              <Card
+                  key={data.name} 
+                  thumbnail={data.thumbnail} 
+                  name={data.name}
+                  language={data.language}
+                  description={data.description}
+                  removeProject={() => removeProject(data.name)}
+              />
+          ))}
         </div>
+
+        {/* Using filter to get X amount of times a language is used in projects */}
+        <h3>Total project: {total}</h3>
+        <p>HTML - {projects.filter(project => project.language.includes("HTML")).length}</p>
+        <p>CSS - {projects.filter(project => project.language.includes("CSS")).length}</p>
+        <p>JavaScript - {projects.filter(project => project.language.includes("JavaScript")).length}</p>
+        <p>Python - {projects.filter(project => project.language.includes("Python")).length}</p>
+        <p>C# - {projects.filter(project => project.language.includes("C#")).length}</p>
+        </>
     )
 }
