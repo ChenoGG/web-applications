@@ -1,7 +1,7 @@
 import Paragraph from "./Paragraph"
 import { ImageProps } from "./types"
 
-type HeaderPageProps = {
+type HeaderProps = {
     headerImage: ImageProps
     title: string
 }
@@ -15,7 +15,7 @@ const headerParagraphText = `Did you know that farming transcends the mere thoug
 
 const headerParagraphText2 = "A true warrior is not found in the sword, but the iridium hoe."
 
-export default function HeaderPage(props: HeaderPageProps) {
+export default function Header(props: HeaderProps) {
     const { headerImage, title } = props
     
     return (
