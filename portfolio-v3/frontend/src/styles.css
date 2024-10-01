@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    text-align: center;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #ffaee0;
+  }
+  
+  /* HEADER STUFF */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #main-header-image {
+    width: 450px;
+    height: auto;
+    border-radius: 50px;
+  }
+  
+  #main-header-text {
+    text-align: left;
+    margin: 50px;
+  }
+  /* HEADER STUFF */
+  
+  #create-button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 1rem;
+  }
+  
+    /* PROJECT CARDS */
+  .project-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px 189px;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    width:  40%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    p {
+      margin: 5px;
+    }
+
+    h2 {
+      margin: 10px;
+    }
+
+    button {
+      margin: 10px;
+    }
+  }
+  /* PROJECT CARDS */
+  
+  /* PROJECT FORM */
+  #project-form {
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* God be with us I don't know how it works*/
+    transform: translate(-50%, -50%); 
+    width: 100%;
+    max-width: 500px;
+    padding: 50px;
+    background-color: white;
+    border: 3px solid #f7209d;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  label,
+  input,
+  textarea {
+    width: 100%; 
+  }
+  
+  .lang-div {
+    display: flex; 
+    margin-right: 200px;
+    margin-top: -20px;
+  }
+  /* PROJECT FORM */
+  

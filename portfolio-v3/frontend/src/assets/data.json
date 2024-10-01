@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Testing 123",
+        "language": ["HTML", "CSS", "JavaScript"],
+        "description": "This is the description of the project",
+        "thumbnail": {
+            "image": "./assets/farmland.jpg",
+            "imageAltText": "Many crops in a farm field"
+        }
+    },
+    {
+        "name": "123 Testing",
+        "language": ["Python", "C#"],
+        "description": "This is another description",
+        "thumbnail": {
+            "image": "./assets/farmland.jpg",
+            "imageAltText": "Many crops in a farm field"
+        }
+    },
+    {
+        "name": "Hello",
+        "language": ["JavaScript"],
+        "description": "Dear",
+        "thumbnail": {
+            "image": "./assets/farmland.jpg",
+            "imageAltText": "Many crops in a farm field"
+        }
+    },
+    {
+        "name": "HelloThereTwo",
+        "language": ["JavaScript"],
+        "description": "Dear",
+        "thumbnail": {
+            "image": "./assets/farmland.jpg",
+            "imageAltText": "Many crops in a farm field"
+        }
+    }
+]
