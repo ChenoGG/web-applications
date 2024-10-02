@@ -27,3 +27,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.grid-container {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, 200px);
+  background-color: var(--border-color);
+  border: 3px solid var(--shadow-color);
+  margin: 1rem;
+  padding: 1rem;
+}
