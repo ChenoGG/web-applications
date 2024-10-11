@@ -1,0 +1,8 @@
+# Refactoring and component composition
+
+## TODO:
+- Add a Nav.tsx component for navigation. This can be kept simple as of writing this there is only one page.
+- Add a Footer.tsx component to keep good semantics and for any "additional information" that might be displayed.
+- Move hardcoded URLs and variables (like text) to their own config file. Important: Give descriptive names.
+- Remove CardDisplayJsonData.tsx as it is no longer needed for displaying the JSON data (use initializeData() in DisplayProject.tsx to fetch instead)
+- Add a ProjectStats.tsx component to count total projects made (move this logic from DisplayProject.tsx)
