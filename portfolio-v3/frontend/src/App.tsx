@@ -5,6 +5,7 @@ import DisplayProject from './components/DisplayProject';
 import { useState } from 'react';
 import { ProjectProps } from './components/types';
 import { FormProps } from './components/types';
+import Nav from './components/Nav';
 
 function App() {
   const [projects, setProjects] = useState<ProjectProps[]>([])
@@ -24,7 +25,11 @@ function App() {
   }
 
   const removeProject = (name: string) => {
-    setProjects((prev) => prev.filter((project) => project.name !== name));
+    if (confirm("Are you sure you want to deleted this project?") === true) {
+      setProjects((prev) => prev.filter((project) => project.name !== name));
+    }
+
+    
   };
 
   return (
@@ -36,7 +41,9 @@ function App() {
             imageAltText: "pixelated-ish shades of blue in a cloud like pattern"}}
           title="Farming Arc"
         />
+        <Nav />
       </header>
+
 
       <main>
         <ProjectForm onAddProject={addProject}/>
