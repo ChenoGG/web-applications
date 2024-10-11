@@ -1,7 +1,9 @@
-type FooterProps = {
-
-}
-
 export default function Footer() {
-    return
+    return (
+        <footer>
+            <p>
+                Copyright © 2024 All rights reserved
+            </p>
+        </footer>
+    )
 }
