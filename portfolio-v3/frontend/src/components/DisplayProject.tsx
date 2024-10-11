@@ -9,14 +9,14 @@ import { FormProps } from "./types";
 type DisplayProjectProps = {
   projects: ProjectProps[]
   setProjects: (projects: ProjectProps[]) => void
-  total: number
   addProject: (newProject: FormProps) => void
   removeProject: (name: string) => void
 }
 
 export default function DisplayProject(props: DisplayProjectProps) {
-    const { projects, setProjects, total, removeProject } = props
+    const { projects, setProjects, removeProject } = props
 
+    // Fetches JSON projects
     const initializeData = () => {
       console.log("fetching data");
       ofetch("http://localhost:3000/projects") 
@@ -35,9 +35,6 @@ export default function DisplayProject(props: DisplayProjectProps) {
       initializeData();
     }, []);
 
-    // for 1.6 (and 1.3? although this just hides it then..) incase no project in list
-    if (total === 0) return null 
-
     return (
         <>
         <div className="project-card-container">
@@ -52,15 +49,6 @@ export default function DisplayProject(props: DisplayProjectProps) {
               />
           ))}
         </div>
-
-        {/* https://upmostly.com/tutorials/react-filter-filtering-arrays-in-react-with-examples */}
-        {/* Using filter to get X amount of times a language is used in projects */}
-        <h3>Total projects: {total}</h3>
-        <p>HTML - {projects.filter(project => project.language.includes("HTML")).length}</p>
-        <p>CSS - {projects.filter(project => project.language.includes("CSS")).length}</p>
-        <p>JavaScript - {projects.filter(project => project.language.includes("JavaScript")).length}</p>
-        <p>Python - {projects.filter(project => project.language.includes("Python")).length}</p>
-        <p>C# - {projects.filter(project => project.language.includes("C#")).length}</p>
         </>
     )
 }
