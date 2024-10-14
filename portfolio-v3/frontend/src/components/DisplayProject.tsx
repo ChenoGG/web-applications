@@ -2,19 +2,16 @@ import { ofetch } from "ofetch";
 import { useEffect } from "react";
 import { ProjectProps } from "./types";
 import Card from "./Card";
-import { FormProps } from "./types";
 
 // Courtesy of ChatGPT for moving projects/setProject up a layer and getting it to work - 
 // gets very confusing the more there is
 type DisplayProjectProps = {
   projects: ProjectProps[]
   setProjects: (projects: ProjectProps[]) => void
-  addProject: (newProject: FormProps) => void
-  removeProject: (name: string) => void
 }
 
 export default function DisplayProject(props: DisplayProjectProps) {
-    const { projects, setProjects, removeProject } = props
+    const { projects, setProjects } = props
 
     // Fetches JSON projects
     const initializeData = () => {
@@ -34,6 +31,16 @@ export default function DisplayProject(props: DisplayProjectProps) {
     useEffect(() => {
       initializeData();
     }, []);
+
+    // Removes a project. Moved from App.tsx.
+    const removeProject = (name: string) => {
+      if (confirm("Are you sure you want to delete this project?")) {
+        const updateProjects = projects.filter((project) => project.name !== name)
+        
+        setProjects(updateProjects)
+      }
+    };
+
 
     return (
         <>

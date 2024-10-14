@@ -1,8 +1,8 @@
 import { useState, type FormEvent } from "react";
-import { FormProps } from "./types";
+import { FormProps, ProjectProps } from "./types";
 
 type ProjectFormProps = {
-  onAddProject: (project: FormProps) => void
+  setProjects: React.Dispatch<React.SetStateAction<ProjectProps[]>> // ChatGPT, not sure what this does exactly but it fixes the typescript error I had
 }
 
 // single state object
@@ -19,7 +19,21 @@ export default function ProjectForm(props: ProjectFormProps) {
     const [showForm, setShowForm] = useState(false);
     const [formData, setFormData] = useState<FormProps>(initialFormData)
 
-    const { onAddProject } = props
+    const { setProjects } = props
+
+    const addProject = (project: FormProps) => {
+    const newProject: ProjectProps = {
+      name: project.name,
+      language: project.language,
+      description: project.desc,
+      thumbnail: {
+        image: project.thumbnail,
+        imageAltText: "",
+      }
+    }
+
+    setProjects((prev) => [...prev, newProject])
+  }
 
     const openForm = () => {
         setShowForm(!showForm)
@@ -29,7 +43,7 @@ export default function ProjectForm(props: ProjectFormProps) {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         if (!formData.name) return;
-        onAddProject(formData)
+        addProject(formData)
         setShowForm(false)
         setFormData(initialFormData)
     }
