@@ -1,7 +1,7 @@
-import { ofetch } from "ofetch";
-import { useEffect } from "react";
 import { ProjectProps } from "./types";
 import Card from "./Card";
+import useFetchData from "../hooks/useFetchData";
+import { useEffect } from "react";
 
 // Courtesy of ChatGPT for moving projects/setProject up a layer and getting it to work - 
 // gets very confusing the more there is
@@ -12,25 +12,15 @@ type DisplayProjectProps = {
 
 export default function DisplayProject(props: DisplayProjectProps) {
     const { projects, setProjects } = props
+    const { projects: fetchedProjects, loading, error } = useFetchData() // ChatGPT for projects: fetchedProjects i.e. renaming it
 
-    // Fetches JSON projects
-    const initializeData = () => {
-      console.log("fetching data");
-      ofetch("http://localhost:3000/projects") 
-        .then((projects: ProjectProps[]) => {
-          console.log("data fetched")
-          setProjects(projects)
-          console.log("data initialized")
-        })
-        .catch((error) => {
-          console.error("data rejected", error)
-        });
-    };
-    
-    // look at Clean up etc. later - https://ulearn.no/courses/webapp-2024-react-server/09-useffect-del-2
+    // Might be scuffed idk
     useEffect(() => {
-      initializeData();
-    }, []);
+      setProjects(fetchedProjects)
+    }, [fetchedProjects])
+
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>Error: {error}</p>;
 
     // Removes a project. Moved from App.tsx.
     const removeProject = (name: string) => {
