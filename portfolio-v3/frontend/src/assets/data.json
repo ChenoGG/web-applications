@@ -7,8 +7,8 @@
             "image": "./assets/farmland.jpg",
             "imageAltText": "Many crops in a farm field"
         },
-        "publishedAt": "2024-10-15",
-        "public": "true",
+        "publishedAt": "2024-10-15T00:00:00Z",
+        "isPublic": true,
         "status": "published"
     },
     {
@@ -19,8 +19,8 @@
             "image": "./assets/farmland.jpg",
             "imageAltText": "Many crops in a farm field"
         },
-        "publishedAt": "2024-10-15",
-        "public": "true",
+        "publishedAt": "2024-10-15T00:00:00Z",
+        "isPublic": true,
         "status": "published"
     },
     {
@@ -31,8 +31,8 @@
             "image": "./assets/farmland.jpg",
             "imageAltText": "Many crops in a farm field"
         },
-        "publishedAt": "2024-10-15",
-        "public": "true",
+        "publishedAt": "2024-10-15T00:00:00Z",
+        "isPublic": true,
         "status": "published"
     },
     {
@@ -43,8 +43,8 @@
             "image": "./assets/farmland.jpg",
             "imageAltText": "Many crops in a farm field"
         },
-        "publishedAt": "2024-10-15",
-        "public": "true",
+        "publishedAt": "2024-10-15T00:00:00Z",
+        "isPublic": true,
         "status": "draft"
     }
 ]
