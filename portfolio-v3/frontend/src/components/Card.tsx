@@ -9,7 +9,7 @@ export default function Card(props: ProjectProps & {
     const { thumbnail, name, language, description, publishedAt, /* isPublic, */ status, removeProject } = props
 
     const formattedDate = formatPublishedAt(publishedAt)
-
+    
     const updateShowState = () => {
         setShowRemove(true)
     }

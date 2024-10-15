@@ -12,7 +12,10 @@ const initialFormData: FormProps = {
   name: "",
   language: [],
   desc: "",
-  thumbnail: ""
+  thumbnail: "",
+  publishedAt: "",
+  isPublic: false,
+  status: "",
 }
 
 export default function ProjectForm(props: ProjectFormProps) {
@@ -29,7 +32,10 @@ export default function ProjectForm(props: ProjectFormProps) {
       thumbnail: {
         image: project.thumbnail,
         imageAltText: "",
-      }
+      },
+      publishedAt: new Date(project.publishedAt),
+      isPublic: project.isPublic,
+      status: project.status
     }
 
     setProjects((prev) => [...prev, newProject])
@@ -70,6 +76,7 @@ export default function ProjectForm(props: ProjectFormProps) {
         }
     };
     
+    // TODO: Add (isPublic) and Status (and tags?) to form!
     // to show/hide form -> https://stackoverflow.com/questions/62240691/how-to-show-form-after-onclick-event-react
     return (
       <>
@@ -98,6 +105,8 @@ export default function ProjectForm(props: ProjectFormProps) {
 
             <label htmlFor="thumbnail">Project Thumbnail:</label>
             <input type="file" id="thumbnail" name="thumbnail" value={formData.thumbnail} onChange={handleFormChange} />
+
+            <input type="date" name="publishedAt" value={formData.publishedAt} onChange={handleFormChange} />
 
             <input type="submit" value="Add project" />
             <button id="exit-button" type="button" onClick={openForm}>Exit form</button>
