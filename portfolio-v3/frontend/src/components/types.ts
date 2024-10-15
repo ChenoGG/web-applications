@@ -8,7 +8,7 @@ export type ProjectProps = {
     language: string[]
     description: string
     thumbnail: ImageProps
-    publishedAt: string
+    publishedAt: string | Date
     isPublic: boolean
     status: string
 }
