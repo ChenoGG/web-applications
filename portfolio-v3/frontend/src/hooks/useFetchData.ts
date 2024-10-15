@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { ProjectProps } from "../components/types"
 import api from "../services/api"
+import { projectsSchema } from "../features/helpers/validate"
 
 const useFetchData = () => {
     const [projects, setProjects] = useState<ProjectProps[]>([])
@@ -13,7 +14,9 @@ const useFetchData = () => {
                 console.log("fetching data")
                 setLoading(true)
                 const data: ProjectProps[] = await api.listProjects()
-                setProjects(data)
+                console.log(projectsSchema.safeParse(data))
+                const parsedData = projectsSchema.parse(data) 
+                setProjects(parsedData)
                 console.log("data fetched")
             } catch (error) {
                 console.error("data rejected", error)
