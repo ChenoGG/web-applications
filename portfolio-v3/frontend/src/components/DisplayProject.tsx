@@ -42,6 +42,9 @@ export default function DisplayProject(props: DisplayProjectProps) {
                   name={data.name}
                   language={data.language}
                   description={data.description}
+                  publishedAt={data.publishedAt}
+                  isPublic={data.isPublic}
+                  status={data.status}
                   removeProject={() => removeProject(data.name)}
               />
           ))}

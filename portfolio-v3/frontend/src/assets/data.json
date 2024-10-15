@@ -6,7 +6,10 @@
         "thumbnail": {
             "image": "./assets/farmland.jpg",
             "imageAltText": "Many crops in a farm field"
-        }
+        },
+        "publishedAt": "2024-10-15",
+        "public": "true",
+        "status": "published"
     },
     {
         "name": "123 Testing",
@@ -15,7 +18,10 @@
         "thumbnail": {
             "image": "./assets/farmland.jpg",
             "imageAltText": "Many crops in a farm field"
-        }
+        },
+        "publishedAt": "2024-10-15",
+        "public": "true",
+        "status": "published"
     },
     {
         "name": "Hello",
@@ -24,7 +30,10 @@
         "thumbnail": {
             "image": "./assets/farmland.jpg",
             "imageAltText": "Many crops in a farm field"
-        }
+        },
+        "publishedAt": "2024-10-15",
+        "public": "true",
+        "status": "published"
     },
     {
         "name": "HelloThereTwo",
@@ -33,6 +42,9 @@
         "thumbnail": {
             "image": "./assets/farmland.jpg",
             "imageAltText": "Many crops in a farm field"
-        }
+        },
+        "publishedAt": "2024-10-15",
+        "public": "true",
+        "status": "draft"
     }
 ]

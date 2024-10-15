@@ -8,6 +8,9 @@ export type ProjectProps = {
     language: string[]
     description: string
     thumbnail: ImageProps
+    publishedAt: string
+    isPublic: boolean
+    status: string
 }
 
 export type FormProps = {
@@ -15,4 +18,7 @@ export type FormProps = {
     language: string[]
     desc: string
     thumbnail: string
+    publishedAt: string
+    isPublic: boolean
+    status: string
   }
