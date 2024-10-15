@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { ProjectProps } from "../components/types"
-import { ofetch } from "ofetch"
+import api from "../services/api"
 
 const useFetchData = () => {
     const [projects, setProjects] = useState<ProjectProps[]>([])
@@ -12,7 +12,7 @@ const useFetchData = () => {
             try {
                 console.log("fetching data")
                 setLoading(true)
-                const data: ProjectProps[] = await ofetch("http://localhost:3000/projects")
+                const data: ProjectProps[] = await api.listProjects()
                 setProjects(data)
                 console.log("data fetched")
             } catch (error) {
