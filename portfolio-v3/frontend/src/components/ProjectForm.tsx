@@ -13,9 +13,13 @@ const initialFormData: FormProps = {
   language: [],
   desc: "",
   thumbnail: "",
-  publishedAt: "",
+  // need date or site crash, so set it to current date
+  // https://stackoverflow.com/questions/47066555/remove-time-after-converting-date-toisostring 
+  publishedAt: new Date().toISOString().split('T')[0], 
   isPublic: false,
   status: "",
+  externalLinks: [],
+  tags: [],
 }
 
 export default function ProjectForm(props: ProjectFormProps) {
@@ -35,7 +39,9 @@ export default function ProjectForm(props: ProjectFormProps) {
       },
       publishedAt: new Date(project.publishedAt),
       isPublic: project.isPublic,
-      status: project.status
+      status: project.status,
+      externalLinks: project.externalLinks,
+      tags: project.tags,
     }
 
     setProjects((prev) => [...prev, newProject])
@@ -58,23 +64,36 @@ export default function ProjectForm(props: ProjectFormProps) {
     // Actually worse than typescript, can't fathom why it would
     // be this hard to get data from some checkboxes in comparison to plain JS 
     const handleFormChange = (e) => {
-        const { name, value, type, checked } = e.target;
-
-        if (type === "checkbox") {
-            setFormData((prev) => {
-                const languages = checked 
-                    ? [...prev.language, value] 
-                    : prev.language.filter(lang => lang !== value); 
-                
-                return { ...prev, language: languages }; 
-            });
-        } else {
-            setFormData({
-                ...formData,
-                [name]: value 
-            });
-        }
+      const { name, value, checked } = e.target;
+    
+      if (name.startsWith("lang")) {
+        setFormData((prev) => {
+          const languages = checked
+            ? [...prev.language, value]
+            : prev.language.filter((lang) => lang !== value);
+    
+          return { ...prev, language: languages };
+        });
+      } else if (name.startsWith("tag")) {
+        setFormData((prev) => {
+          const tags = checked
+            ? [...prev.tags, value]
+            : prev.tags.filter((tag) => tag !== value);
+    
+          return { ...prev, tags };
+        });
+      } else {
+        setFormData((prev) => ({
+          ...prev,
+          [name]: value,
+        }));
+      }
     };
+
+
+    // Didn't quite work, scrapped for now. (adding extra external links to project)
+/*  const handleExtraAddLink = () => {}
+    const handleExtraAddLinkChange = () => {} */
     
     // TODO: Add (isPublic) and Status (and tags?) to form!
     // to show/hide form -> https://stackoverflow.com/questions/62240691/how-to-show-form-after-onclick-event-react
@@ -88,8 +107,9 @@ export default function ProjectForm(props: ProjectFormProps) {
             <label htmlFor="name">Project name:</label>
             <input type="text" id="name" name="name" value={formData.name} onChange={handleFormChange} />
             
-            <p>Language:</p>
-            <div className="lang-div">
+      
+            <fieldset className="lang-div">
+              <legend>Language:</legend>
               <input type="checkbox" id="langHTML" name="langHTML" value="HTML" checked={formData.language.includes("HTML")} onChange={handleFormChange} />
               <label htmlFor="langHTML">HTML</label>
               <input type="checkbox" id="langCSS" name="langCSS" value="CSS" checked={formData.language.includes("CSS")} onChange={handleFormChange} />
@@ -98,14 +118,28 @@ export default function ProjectForm(props: ProjectFormProps) {
               <label htmlFor="langJS">JavaScript</label>
               <input type="checkbox" id="langPY" name="langPY" value="Python" checked={formData.language.includes("Python")} onChange={handleFormChange} />
               <label htmlFor="langPY">Python</label>
-            </div>
+            </fieldset>
+
+            <fieldset className="lang-div">
+              <legend>Tags:</legend>
+              <input type="checkbox" id="tagFrontend" name="tagFrontend" value="Frontend" checked={formData.tags.includes("Frontend")} onChange={handleFormChange} />
+              <label htmlFor="frontend">Frontend</label>
+              <input type="checkbox" id="tagBackend" name="tagBackend" value="Backend" checked={formData.tags.includes("Backend")} onChange={handleFormChange} />
+              <label htmlFor="backend">Backend</label>
+              <input type="checkbox" id="TagFullstack" name="tagFullstack" value="Fullstack" checked={formData.tags.includes("Fullstack")} onChange={handleFormChange} />
+              <label htmlFor="fullstack">Fullstack</label>
+            </fieldset>
 
             <label htmlFor="desc">Description:</label>
             <textarea id="desc" name="desc" value={formData.desc} onChange={handleFormChange}></textarea>
 
+            <label htmlFor="externalLinks">External links:</label>
+            <input type="url" name="externalLinks" value={formData.externalLinks} onChange={handleFormChange} placeholder="https://example.com" />
+
             <label htmlFor="thumbnail">Project Thumbnail:</label>
             <input type="file" id="thumbnail" name="thumbnail" value={formData.thumbnail} onChange={handleFormChange} />
 
+            <label htmlFor="publishedAt">Publication Date:</label>
             <input type="date" name="publishedAt" value={formData.publishedAt} onChange={handleFormChange} />
 
             <input type="submit" value="Add project" />
