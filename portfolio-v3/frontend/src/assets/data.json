@@ -9,7 +9,9 @@
         },
         "publishedAt": "2024-10-15T00:00:00Z",
         "isPublic": true,
-        "status": "published"
+        "status": "published",
+        "externalLinks": [],
+        "tags": ["Fullstack"]
     },
     {
         "name": "123 Testing",
@@ -21,7 +23,9 @@
         },
         "publishedAt": "2024-10-15T00:00:00Z",
         "isPublic": true,
-        "status": "published"
+        "status": "published",
+        "externalLinks": [], 
+        "tags": ["Frontend", "Backend"]
     },
     {
         "name": "Hello",
@@ -32,8 +36,10 @@
             "imageAltText": "Many crops in a farm field"
         },
         "publishedAt": "2024-10-15T00:00:00Z",
-        "isPublic": true,
-        "status": "published"
+        "isPublic": false,
+        "status": "published", 
+        "externalLinks": [], 
+        "tags": ["Frontend"]
     },
     {
         "name": "HelloThereTwo",
@@ -44,7 +50,9 @@
             "imageAltText": "Many crops in a farm field"
         },
         "publishedAt": "2024-10-15T00:00:00Z",
-        "isPublic": true,
-        "status": "draft"
+        "isPublic": false,
+        "status": "draft", 
+        "externalLinks": [], 
+        "tags": ["Frontend"]
     }
 ]

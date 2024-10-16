@@ -11,6 +11,8 @@ export type ProjectProps = {
     publishedAt: string | Date
     isPublic: boolean
     status: string
+    externalLinks?: string[]
+    tags: string[]
 }
 
 export type FormProps = {
@@ -21,4 +23,6 @@ export type FormProps = {
     publishedAt: string
     isPublic: boolean
     status: string
+    externalLinks?: string[]
+    tags: string[]
   }

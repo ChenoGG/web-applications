@@ -15,6 +15,8 @@ const projectSchema = z.object({
     publishedAt: z.string().datetime(),
     isPublic: z.boolean(),
     status: z.string(),
+    externalLinks: z.array(z.string().url()).optional(), // optional - no more crash without
+    tags: z.array(z.string())
 })
 
 const projectsSchema = z.array(projectSchema)
