@@ -3,7 +3,9 @@ import { fetchProjectURL } from "../configs/url"
 
 const listProjects = async () => {
     try {
-        const projects = await ofetch(fetchProjectURL)
+        const projects = await ofetch(fetchProjectURL, {
+            credentials: "include",
+        })
         return projects ?? []
     } catch (error) {
         console.error("failed to fetch projects", error)
