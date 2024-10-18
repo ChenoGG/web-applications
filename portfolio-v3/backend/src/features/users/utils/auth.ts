@@ -1,7 +1,7 @@
 import { users } from "../../../data/users";
 import type { User } from "../types/types";
 
-const parseCookie = (cookie: string) => {
+export const parseCookie = (cookie: string) => {
   return Object.fromEntries(
     cookie.split(";").map((cookie) => cookie.trim().split("="))
   );

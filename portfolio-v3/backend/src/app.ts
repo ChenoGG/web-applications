@@ -3,8 +3,14 @@ import { cors } from "hono/cors";
 import { serveStatic } from "@hono/node-server/serve-static";
 import { readFile } from "node:fs/promises";
 import { hostURL } from "./config";
+import { ProjectProps, User } from "./features/users/types/types";
+import { authenticate } from "./features/users/utils/middleware";
 
-const app = new Hono();
+type ContextVariables = {
+    user: User | null
+}
+
+const app = new Hono<{ Variables: ContextVariables }>();
 
 app.use("/*", cors({
     origin: hostURL,
@@ -14,10 +20,21 @@ app.use("/*", cors({
 app.use("/statics/*", serveStatic({ root: "./" }))
 
 // json is the web-route
-app.get("/projects", async (c) => {
+app.get("/projects", authenticate(), async (c) => {
     const data = await readFile("../frontend/src/assets/data.json", "utf-8")
+    let projects = JSON.parse(data)
+    
+    const user = c.get("user")
 
-    return c.json(JSON.parse(data))
+    let userRoleShownProjects
+    if (user.id === "1") { // 1 = ADMIN
+        userRoleShownProjects = projects
+    } 
+    else { // 2 = USER
+        userRoleShownProjects = projects.filter((project: ProjectProps) => project.isPublic === true)
+    } 
+    
+    return c.json(userRoleShownProjects)
 })
 
 // test
