@@ -16,7 +16,7 @@ const initialFormData: FormProps = {
   // need date or site crash, so set it to current date
   // https://stackoverflow.com/questions/47066555/remove-time-after-converting-date-toisostring 
   publishedAt: new Date().toISOString().split('T')[0], 
-  isPublic: false,
+  isPublic: true,
   status: "",
   externalLinks: [],
   tags: [],
@@ -74,7 +74,10 @@ export default function ProjectForm(props: ProjectFormProps) {
     
           return { ...prev, language: languages };
         });
-      } else if (name.startsWith("tag")) {
+        return
+      } 
+      
+      if (name.startsWith("tag")) {
         setFormData((prev) => {
           const tags = checked
             ? [...prev.tags, value]
@@ -82,6 +85,19 @@ export default function ProjectForm(props: ProjectFormProps) {
     
           return { ...prev, tags };
         });
+        return
+      } 
+      
+      // TODO: NOT sure if this works or not. -> For newly added projects to be hidden/public when using the form.
+      if (name === "isPublic") {
+        const isPublic = value === "true"
+        setFormData((prev) => ({
+          ...prev, 
+          isPublic: isPublic
+        }))
+        console.log("Form Data:", formData);
+        return
+
       } else {
         setFormData((prev) => ({
           ...prev,
@@ -95,7 +111,6 @@ export default function ProjectForm(props: ProjectFormProps) {
 /*  const handleExtraAddLink = () => {}
     const handleExtraAddLinkChange = () => {} */
     
-    // TODO: Add (isPublic) and Status (and tags?) to form!
     // to show/hide form -> https://stackoverflow.com/questions/62240691/how-to-show-form-after-onclick-event-react
     return (
       <>
@@ -141,6 +156,11 @@ export default function ProjectForm(props: ProjectFormProps) {
 
             <label htmlFor="publishedAt">Publication Date:</label>
             <input type="date" name="publishedAt" value={formData.publishedAt} onChange={handleFormChange} />
+
+            <label htmlFor="public">Public</label>
+            <input type="radio" id="public" name="isPublic" value="true" checked={formData.isPublic === true} onChange={handleFormChange} />
+            <label htmlFor="not-public">Not Public</label>
+            <input type="radio" id="not-public" name="isPublic" value="false" checked={formData.isPublic === false} onChange={handleFormChange} />
 
             <input type="submit" value="Add project" />
             <button id="exit-button" type="button" onClick={openForm}>Exit form</button>
