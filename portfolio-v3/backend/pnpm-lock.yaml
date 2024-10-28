@@ -11,6 +11,9 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.0
         version: 1.13.0(hono@4.6.1)
+      '@t3-oss/env-core':
+        specifier: ^0.11.1
+        version: 0.11.1(typescript@5.6.3)(zod@3.23.8)
       '@types/better-sqlite3':
         specifier: ^7.6.11
         version: 7.6.11
@@ -20,12 +23,18 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       hono:
         specifier: ^4.6.1
         version: 4.6.1
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@types/node':
         specifier: ^20.11.17
@@ -186,6 +195,15 @@ packages:
     peerDependencies:
       hono: ^4
 
+  '@t3-oss/env-core@0.11.1':
+    resolution: {integrity: sha512-MaxOwEoG1ntCFoKJsS7nqwgcxLW1SJw238AJwfJeaz3P/8GtkxXZsPPolsz1AdYvUTbe3XvqZ/VCdfjt+3zmKw==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   '@types/better-sqlite3@7.6.11':
     resolution: {integrity: sha512-i8KcD3PgGtGBLl3+mMYA8PdKkButvPyARxA7IQAd6qeslht13qxb1zzO8dRCtE7U3IoJS782zDBAeoKiM695kg==}
 
@@ -224,6 +242,10 @@ packages:
   detect-libc@2.0.3:
     resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
     engines: {node: '>=8'}
+
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
 
   end-of-stream@1.4.4:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
@@ -356,6 +378,9 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
 snapshots:
 
   '@esbuild/aix-ppc64@0.23.1':
@@ -434,6 +459,12 @@ snapshots:
     dependencies:
       hono: 4.6.1
 
+  '@t3-oss/env-core@0.11.1(typescript@5.6.3)(zod@3.23.8)':
+    dependencies:
+      zod: 3.23.8
+    optionalDependencies:
+      typescript: 5.6.3
+
   '@types/better-sqlite3@7.6.11':
     dependencies:
       '@types/node': 20.16.5
@@ -475,6 +506,8 @@ snapshots:
   deep-extend@0.6.0: {}
 
   detect-libc@2.0.3: {}
+
+  dotenv@16.4.5: {}
 
   end-of-stream@1.4.4:
     dependencies:
@@ -632,3 +665,5 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   wrappy@1.0.2: {}
+
+  zod@3.23.8: {}
