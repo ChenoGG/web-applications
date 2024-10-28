@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev:debug": "tsx watch --inspect src/index.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.0",
