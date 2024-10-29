@@ -89,6 +89,8 @@ export default function ProjectForm(props: ProjectFormProps) {
       } 
       
       // TODO: NOT sure if this works or not. -> For newly added projects to be hidden/public when using the form.
+      // Update: Public/hidden works when using isPublic from json file with cookies,
+      //         but when adding a new project through the web-form something is not working as intended
       if (name === "isPublic") {
         const isPublic = value === "true"
         setFormData((prev) => ({
