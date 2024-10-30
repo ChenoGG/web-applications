@@ -21,7 +21,8 @@ export const seed = async (db: DB) => {
                             language, description,
                             thumbnail_image, thumbnail_image_alt_text,
                             published_at, is_public,
-                            status, external_links, tags) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                            status, external_links, tags)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `);
 
         // Can't store arrays in SQLite -> stringify
