@@ -5,6 +5,7 @@ import { readFile } from "node:fs/promises";
 import { hostURL } from "./config";
 import { ProjectProps, User } from "./features/users/types/types";
 import { authenticate } from "./features/users/utils/middleware";
+import { projectController } from "./features/projects/controller/project.controller";
 
 type ContextVariables = {
     user: User | null
@@ -36,6 +37,10 @@ app.get("/projects", authenticate(), async (c) => {
     
     return c.json(userRoleShownProjects)
 })
+
+
+// CRUD route
+app.route("/v1/projects", projectController)
 
 // test
 app.get("/", async (c) => {
