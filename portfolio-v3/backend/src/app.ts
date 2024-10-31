@@ -3,7 +3,8 @@ import { cors } from "hono/cors";
 import { serveStatic } from "@hono/node-server/serve-static";
 import { readFile } from "node:fs/promises";
 import { hostURL } from "./config";
-import { ProjectProps, User } from "./features/users/types/types";
+import { User } from "./features/users/types/types";
+import { ProjectProps } from "./features/projects/types";
 import { authenticate } from "./features/users/utils/middleware";
 import { projectController } from "./features/projects/controller/project.controller";
 
