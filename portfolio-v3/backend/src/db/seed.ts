@@ -2,7 +2,7 @@
 import fs from "node:fs/promises"
 import { join } from "node:path"
 import { DB } from "./db"
-import { ProjectProps } from "@/features/users/types/types"
+import { ProjectProps } from "@/features/projects/types"
 import * as url from "url"
 
 export const seed = async (db: DB) => {

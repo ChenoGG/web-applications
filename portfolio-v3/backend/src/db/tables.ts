@@ -19,7 +19,8 @@ export const createTables = async (db: DB) => {
         `);
 }
 
-// User - need?
+// User - is this needed at this point?
+// Use for cookies I guess if you don't set it manually?
 /* CREATE TABLE IF NOT EXISTS users (
     id TEXT PRIMARY KEY,
     email TEXT UNIQUE NOT NULL,
