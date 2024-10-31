@@ -116,7 +116,7 @@ export default function ProjectForm(props: ProjectFormProps) {
     // to show/hide form -> https://stackoverflow.com/questions/62240691/how-to-show-form-after-onclick-event-react
     return (
       <>
-        <button id="create-button" type="button" onClick={openForm}>New project</button>
+        <button className="create-button" type="button" onClick={openForm}>New project</button>
 
         {showForm && (
         <div id="project-form">

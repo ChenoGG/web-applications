@@ -11,7 +11,7 @@ export default function Header(props: HeaderProps) {
     const { headerImage, title } = props
     
     return (
-        <>
+        <div className="header-container">
             <img id="main-header-image" src={headerImage.image} alt={headerImage.imageAltText} />
             <div id="main-header-text">
                 <h1>{title}</h1>
@@ -25,6 +25,6 @@ export default function Header(props: HeaderProps) {
                     {headerParagraphText2}
                 </Paragraph>
             </div>
-        </>
+        </div>
     )
 }

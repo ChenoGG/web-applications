@@ -25,7 +25,7 @@ export default function Card(props: ProjectProps & {
                 <p>Published Date: {formattedDate}</p>
                 <p>Status: {status}</p>
                 {
-                    showRemove ? (<button type="button" onClick={() => removeProject(name)}>Delete Project</button>) : null
+                    showRemove ? (<button className="create-button" type="button" onClick={() => removeProject(name)}>Delete Project</button>) : null
                 }
             </section>
     )
