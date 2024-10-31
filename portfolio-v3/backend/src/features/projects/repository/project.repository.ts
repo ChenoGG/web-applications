@@ -25,12 +25,12 @@ export const createProjectRepository = (db: DB) => {
                 project.name,
                 project.language, 
                 project.description,
-                project.thumbnail.image,
-                project.thumbnail.imageAltText,
-                project.publishedAt, 
-                project.isPublic,
+                project.thumbnail_image,
+                project.thumbnail_image_alt_text,
+                project.published_at, 
+                project.is_public,
                 project.status,
-                project.externalLinks, 
+                project.external_links, 
                 project.tags 
             )
     
@@ -117,12 +117,12 @@ export const createProjectRepository = (db: DB) => {
                 project.name,
                 project.language,
                 project.description,
-                project.thumbnail.image,
-                project.thumbnail.imageAltText,
-                project.publishedAt,
-                project.isPublic,
+                project.thumbnail_image,
+                project.thumbnail_image_alt_text,
+                project.published_at,
+                project.is_public,
                 project.status,
-                project.externalLinks,
+                project.external_links,
                 project.tags,
                 project.id
             )

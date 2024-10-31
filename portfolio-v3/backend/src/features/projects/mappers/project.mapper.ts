@@ -32,13 +32,13 @@ export const fromDb = (project: DbProjectProps) => {
         language: project.language ? project.language.split(", ") : [],
         description: project.description,
         thumbnail: {
-            image: project.thumbnail.image,
-            imageAltText: project.thumbnail.imageAltText,
+            image: project.thumbnail_image || "",
+            imageAltText: project.thumbnail_image_alt_text || "",
         } as ImageProps,
-        publishedAt: project.publishedAt ? new Date(project.publishedAt) : "",
-        isPublic: project.isPublic,
+        publishedAt: project.published_at ? new Date(project.published_at) : "",
+        isPublic: project.is_public,
         status: project.status,
-        externalLinks: project.externalLinks ? project.externalLinks.split(", ") : [],
+        externalLinks: project.external_links ? project.external_links.split(", ") : [],
         tags: project.tags ? project.tags.split(", ") : []
     }
 }
@@ -71,21 +71,21 @@ export const toDb = (data: ProjectProps) => {
                     // Think this works, asked ChatGPT here.
                     const thumbnail = value as ImageProps
 
-                    dbProject.thumbnail.image = thumbnail.image ?? ""
-                    dbProject.thumbnail.imageAltText = thumbnail.image ?? ""
+                    dbProject.thumbnail_image = thumbnail.image ?? ""
+                    dbProject.thumbnail_image_alt_text = thumbnail.image ?? ""
                 }
                 break;
             case "publishedAt":
-                dbProject.publishedAt = value?.toString() 
+                dbProject.published_at = value?.toString() 
                 break;
             case "isPublic":
-                dbProject.isPublic = value
+                dbProject.is_public = value
                 break;
             case "status":
                 dbProject.status = value
                 break;
             case "externalLinks":
-                dbProject.externalLinks = value?.join(", ")
+                dbProject.external_links = value?.join(", ")
                 break;
             case "tags":
                 dbProject.tags = value?.join(", ")

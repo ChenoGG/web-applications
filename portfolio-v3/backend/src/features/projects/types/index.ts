@@ -21,11 +21,12 @@ export type DbProjectProps = {
     name: string
     language: string
     description: string 
-    thumbnail: ImageProps
-    publishedAt: string 
-    isPublic: boolean
+    thumbnail_image: string
+    thumbnail_image_alt_text: string
+    published_at: string 
+    is_public: boolean
     status: string
-    externalLinks?: string
+    external_links?: string
     tags: string
 }
 
