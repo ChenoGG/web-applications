@@ -14,7 +14,7 @@ const projectSchema = z.object({
     thumbnail: thumbnailSchema,
     publishedAt: z.string().datetime(),
     isPublic: z.boolean(),
-    status: z.string(),
+    status: z.string(), // could have used .enum(["public", "hidden"]) here I think
     externalLinks: z.array(z.string().url()).optional(), // optional - no more crash without
     tags: z.array(z.string())
 })

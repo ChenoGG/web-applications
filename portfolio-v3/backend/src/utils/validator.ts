@@ -1,4 +1,4 @@
-import { ProjectProps } from "@/features/users/types/types";
+import { ProjectProps } from "@/features/projects/types";
 import { z } from "zod";
 
 const thumbnailSchema = z.object({
@@ -12,7 +12,7 @@ const projectSchema = z.object({
     language: z.array(z.string()).min(1, {message: "Project language is required"}),
     description: z.string().optional(),
     thumbnail: thumbnailSchema,
-    publishedAt: z.string().datetime().nullable().optional(),
+    publishedAt: z.string().datetime().optional(),
     isPublic: z.boolean(),
     status: z.string().nullable().optional(),
     externalLinks: z.array(z.string().url()).optional(), 
