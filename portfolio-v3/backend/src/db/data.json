@@ -1,0 +1,64 @@
+{
+    "projects": [
+      {
+        "id": "1",
+        "name": "Project Zeus",
+        "language": ["HTML", "CSS", "JavaScript"],
+        "description": "Project Zeus is all about figuring out a way for marketing to be a branch of sales, however, it seems that this is not possible!",
+        "thumbnail": {
+            "image": "./assets/farmland.jpg",
+            "imageAltText": "Many crops in a farm field"
+        },
+        "publishedAt": "2024-10-15T00:00:00Z",
+        "isPublic": true,
+        "status": "published",
+        "externalLinks": ["https://peepshow.fandom.com/wiki/Conference"],
+        "tags": ["Fullstack"]
+    },
+    {
+        "id": "2",
+        "name": "Farm Simulator",
+        "language": ["Python", "C#"],
+        "description": "Ever wanted to escape technology and live in a hut while you farm all day? Well, you can't play this without a PC. But you can farm all day.",
+        "thumbnail": {
+            "image": "./assets/farmland.jpg",
+            "imageAltText": "Many crops in a farm field"
+        },
+        "publishedAt": "2024-10-15T00:00:00Z",
+        "isPublic": true,
+        "status": "published",
+        "externalLinks": ["https://someMadeUpLinkAboutFarmingAndStuff.com"], 
+        "tags": ["Frontend", "Backend"]
+    },
+    {
+        "id": "3",
+        "name": "Hello",
+        "language": ["JavaScript"],
+        "description": "Dear",
+        "thumbnail": {
+            "image": "./assets/farmland.jpg",
+            "imageAltText": "Many crops in a farm field"
+        },
+        "publishedAt": "2024-10-15T00:00:00Z",
+        "isPublic": false,
+        "status": "published", 
+        "externalLinks": [], 
+        "tags": ["Frontend"]
+    },
+    {
+        "id": "4",
+        "name": "HelloThereTwo",
+        "language": ["JavaScript"],
+        "description": "Dear",
+        "thumbnail": {
+            "image": "./assets/farmland.jpg",
+            "imageAltText": "Many crops in a farm field"
+        },
+        "publishedAt": "2024-10-15T00:00:00Z",
+        "isPublic": false,
+        "status": "draft", 
+        "externalLinks": [], 
+        "tags": ["Frontend"]
+    }
+    ]
+  }
