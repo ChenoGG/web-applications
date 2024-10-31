@@ -59,8 +59,6 @@ export const createProjectRepository = (db: DB) => {
             const query = db.prepare("SELECT * FROM projects WHERE id = ?")
             const data = query.get(id) as DbProjectProps
             
-            // TODO: ADD ZOD VALIDATION
-            
             return ResultHandler.success(fromDb(data))
 
         } catch (error) {
