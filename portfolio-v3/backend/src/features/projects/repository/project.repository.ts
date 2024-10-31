@@ -1,6 +1,8 @@
 import { DB } from "@/db/db"
-import { ProjectProps } from "@/features/users/types/types"
+import { DbProjectProps, ProjectProps } from "../types"
 import { fromDb, toDb } from "../mappers/project.mapper"
+import { Result } from "@/types"
+import { ResultHandler } from "@/lib/result"
 
 export const createProjectRepository = (db: DB) => {
 
@@ -55,7 +57,7 @@ export const createProjectRepository = (db: DB) => {
             if (!project) return ResultHandler.failure("Project not found", "NOT_FOUND")
             
             const query = db.prepare("SELECT * FROM projects WHERE id = ?")
-            const data = query.get(id)
+            const data = query.get(id) as DbProjectProps
             
             // TODO: ADD ZOD VALIDATION
             
@@ -70,7 +72,7 @@ export const createProjectRepository = (db: DB) => {
     const list = async (): Promise<Result<ProjectProps[]>> => {
         try {
             const query = db.prepare("SELECT * FROM projects")
-            const data = query.all()
+            const data = query.all() as DbProjectProps[]
 
             return ResultHandler.success(data.map((project) => fromDb(project)))
         } catch (error) {
@@ -126,7 +128,7 @@ export const createProjectRepository = (db: DB) => {
             )
 
             return ResultHandler.success(data)
-            
+
         } catch (error) {
             return ResultHandler.failure(error, "INTERNAL_SERVER_ERROR")
         }

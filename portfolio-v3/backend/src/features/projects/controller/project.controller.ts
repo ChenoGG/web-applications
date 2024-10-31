@@ -16,7 +16,7 @@ export const createProjectController = (projectService: ProjectService) => {
         const result = await projectService.list()
 
         if (!result.success) {
-            return c.json({ error: result.error.message }, { status: result.error.code })
+            return c.json({ error: result.error.message }, { status: 500 })
         }
 
         return c.json(result.data, { status: 200 })
@@ -29,7 +29,7 @@ export const createProjectController = (projectService: ProjectService) => {
         const result = await projectService.getById(id)
 
         if (!result.success) {
-            return c.json({ error: result.error.message }, { status: result.error.code })
+            return c.json({ error: result.error.message }, { status: 500 })
         }
 
         return c.json(result.data, { status: 200 })
@@ -44,7 +44,7 @@ export const createProjectController = (projectService: ProjectService) => {
         const result = await projectService.create(project)
 
         if (!result.success) {
-            return c.json({ error: result.error.message }, { status: result.error.code} )
+            return c.json({ error: result.error.message }, { status: 500} )
         }
 
         return c.json({ id: result.data }, { status: 201 })
@@ -58,7 +58,7 @@ export const createProjectController = (projectService: ProjectService) => {
         const result = await projectService.remove(id)
 
         if (!result.success) {
-            return c.json({ error: result.error.message }, { status: result.error.code} )
+            return c.json({ error: result.error.message }, { status: 500} )
         }
 
         return c.json(result)
@@ -76,7 +76,7 @@ export const createProjectController = (projectService: ProjectService) => {
         })
 
         if (!result.success) {
-            return c.json({ error: result.error.message }, { status: result.error.code} )
+            return c.json({ error: result.error.message }, { status: 400} )
         }
 
         return c.json(result)

@@ -1,4 +1,5 @@
-import { DbProjectProps, Entries, ImageProps, ProjectProps } from "@/features/users/types/types";
+import { DbProjectProps, ImageProps, ProjectProps } from "../types";
+import { Entries } from "@/types";
 
 export const createId = () => {
     return crypto.randomUUID();
@@ -34,7 +35,7 @@ export const fromDb = (project: DbProjectProps) => {
             image: project.thumbnail.image,
             imageAltText: project.thumbnail.imageAltText,
         } as ImageProps,
-        publishedAt: project.publishedAt ? new Date(project.publishedAt) : null,
+        publishedAt: project.publishedAt ? new Date(project.publishedAt) : "",
         isPublic: project.isPublic,
         status: project.status,
         externalLinks: project.externalLinks ? project.externalLinks.split(", ") : [],
@@ -75,7 +76,7 @@ export const toDb = (data: ProjectProps) => {
                 }
                 break;
             case "publishedAt":
-                dbProject.publishedAt = value?.toString()
+                dbProject.publishedAt = value?.toString() 
                 break;
             case "isPublic":
                 dbProject.isPublic = value

@@ -1,8 +1,10 @@
 import db from "@/db/db";
 import { createProjectRepository, ProjectRepository } from "../repository/project.repository";
-import { CreateProjectDto, ProjectProps, UpdateProjectDto } from "@/features/users/types/types";
+import { CreateProjectDto, ProjectProps, UpdateProjectDto } from "../types";
 import { createProject } from "../mappers/project.mapper";
 import { isValidProject } from "@/utils/validator";
+import { ResultHandler } from "@/lib/result";
+import { Result } from "@/types";
 
 export const createProjectService = (projectRepository: ProjectRepository) => {
 
